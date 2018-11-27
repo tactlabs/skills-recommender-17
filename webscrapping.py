@@ -4,7 +4,7 @@ from fake_useragent import UserAgent
 
 user_agent = UserAgent()
 for page in range(1,39):
-    main_url = 'https://stackoverflow.com/jobs?med=site-ui&ref=jobs-tab'+str(page)
+    main_url = 'https://stackoverflow.com/jobs?med=site-ui&ref=jobs-tab&sort=i&pg='+str(page)
     page = requests.get(main_url,headers={'user-agent':user_agent.chrome})
     soup = BeautifulSoup(page.content,'lxml')
 
